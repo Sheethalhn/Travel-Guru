@@ -9,14 +9,14 @@
 
 <script type="text/javascript">
 
-        var con;
+        var con,con1;
         var image;
-        
+        var clear;
         var x  = 550;
         var y  = 0;
         var dx = 10;
         var dy = 7;
-        var text, con1, step, steps = 0;
+        var text, step, steps = 0;
         delay = 20;
         
         function init()
@@ -24,7 +24,7 @@
             var world = document.getElementById("world");
             text = document.getElementById("text");
             con = world.getContext("2d");
-            con1=text.getContext("2d");
+            con1 = text.getContext("2d");
             
             con.fillStyle = "white";
             
@@ -34,9 +34,8 @@
   				con.drawImage(image, x, y,200,200); 
 			}, false);
             
-            world.onmouseover=mouseClick;
-            world.onmouseout=mouseOut;
-            
+            world.onmouseover=function() {mouseOver()};
+            world.onmouseout=function() {mouseOut()};
             
             con1.fillStyle = "blue";
             con1.font = "20pt Verdana";
@@ -51,9 +50,13 @@
             steps = text.width + 50;
             moveTextLeftToRight();
         }
+        
         function draw()
         {
-            //con.fillRect(0, 0, 200, 200);
+            
+            con.fillStyle="white";
+            con.fillRect(550, 0, 200, 200);
+            
   			con.drawImage(image, x, y,200,200); 
   			
   			x += dx;
@@ -64,13 +67,14 @@
             
         }
         
-        function mouseClick(event)
+        function mouseOver(event)
         {
-        setInterval(draw,200);
+        clear = setInterval(draw,200);
         }
+        
         function mouseOut(event)
         {
-        con.drawImage(image, x, y,200,200);
+        clearInterval(clear);
         }
         
         function moveTextLeftToRight() {
@@ -104,10 +108,10 @@
 	<canvas id="text" height="100" width="1400">
     	<p>Your browser does not support the canvas tag.</p>
 	</canvas>
-</div>
+	</div>
 	<canvas id="world" height="200" width="1000">
     	<p>Your browser does not support the canvas tag.</p>
-</canvas>
+	</canvas>
 
 </body>
 </html>
