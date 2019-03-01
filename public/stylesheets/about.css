@@ -18,3 +18,9 @@
 .animation-text{
  padding-left: 450px;
 }
+  .about_page{
+  font-weight:bold;
+  font-size:23px;
+  font-style:Sans-serif;
+  text-align:justify;
+  }
