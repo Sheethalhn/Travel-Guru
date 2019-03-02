@@ -1,6 +1,6 @@
 .animation-div{
- width: 150px;
- height: 150px;
+ width: 50px;
+ height: 50px;
  position: relative;
  animation-name: globe;
  animation-duration: 7s;
@@ -18,9 +18,10 @@
 .animation-text{
  padding-left: 450px;
 }
-  .about_page{
-  font-weight:bold;
-  font-size:23px;
-  font-style:Sans-serif;
-  text-align:justify;
-  }
+
+.about_page{
+font-weight:bold;
+font-size:23px;
+font-style:Sans-serif;
+text-align:justify;
+}

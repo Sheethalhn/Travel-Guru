@@ -18,25 +18,25 @@
         var dy = 7;
         var text, step, steps = 0;
         delay = 20;
-        
+
         function init()
         {
             var world = document.getElementById("world");
             text = document.getElementById("text");
             con = world.getContext("2d");
             con1 = text.getContext("2d");
-            
+
             con.fillStyle = "white";
-            
+
             image = new Image();
             image.src = "./images/globe.jpeg";
             image.addEventListener('load', function() {
-  				con.drawImage(image, x, y,200,200); 
+  				con.drawImage(image, x, y,150,150);
 			}, false);
-            
+
             world.onmouseover=function() {mouseOver()};
             world.onmouseout=function() {mouseOut()};
-            
+
             con1.fillStyle = "blue";
             con1.font = "20pt Verdana";
             con1.textAlign = "center";
@@ -45,38 +45,37 @@
 		    con1.shadowOffsetY = 3;
 		    con1.shadowColor = "gray";
 		    con1.shadowBlur = 5;
-            
+
             step = 0;
             steps = text.width + 50;
             moveTextLeftToRight();
         }
-        
+
         function draw()
         {
-            
+
             con.fillStyle="white";
             con.fillRect(550, 0, 200, 200);
-            
-  			con.drawImage(image, x, y,200,200); 
-  			
+  			con.drawImage(image, x, y,200,200);
+
   			x += dx;
             y += dy;
-            
+
             if ((x < 0) || (x > 0)) dx = -dx;
             if ((y < 0) || (y > 0)) dy = -dy;
-            
+
         }
-        
+
         function mouseOver(event)
         {
         clear = setInterval(draw,200);
         }
-        
+
         function mouseOut(event)
         {
         clearInterval(clear);
         }
-        
+
         function moveTextLeftToRight() {
             step++;
             con1.clearRect(0, 0, text.width, text.height);
@@ -89,6 +88,29 @@
             if (step < steps)
                 var t = setTimeout('moveTextLeftToRight()', delay);
         }
+
+        document.onkeyup = function(e){
+          con.clearRect(550, 200, 200, 200);
+          //Left key pressed
+          if (e.keyCode == '37'){
+          console.log("Move Left Key");
+          con.clearRect(550, 0, 200, 200);
+          con = world.getContext("2d");
+          con.fillStyle= "white";
+          con.fillRect(150, 0, 200, 200);
+          con.drawImage(image, x, y,50,50);
+        }
+          //Right Key pressed
+          if (e.keyCode == '39'){
+          console.log("Move Right Key");
+          con.clearRect(550, 0, 200, 200);
+          con = world.getContext("2d");
+          con.fillStyle= "white";
+          con.fillRect(550, 200, 200, 200);
+          con.drawImage(image, x, y,220,210);
+      }
+        }
+
    </script>
 </head>
 
@@ -109,16 +131,16 @@
 	Your browser does not support the canvas tag.
 	</canvas>
 	</div>
-	<div>
-		<canvas id="world" height="200" width="1000">
+	<div id="move">
+		<canvas id="world" height="200" width="900">
 	Your browser does not support the canvas tag.
 	</canvas>
 	</div>
 	<div class="about_page">
-	<p>We are a travel enthusiast bunch of people motivated towards helping our customers to 
-	plan their dream vacation. Planning a perfect trip involves a lot of things like booking 
-	flights, hotels to stay, checking the weather, figuring out must visit places and can be a 
-	pretty daunting task. So here we are to help you through this process. Please register to 
+	<p>We are a travel enthusiast bunch of people motivated towards helping our customers to
+	plan their dream vacation. Planning a perfect trip involves a lot of things like booking
+	flights, hotels to stay, checking the weather, figuring out must visit places and can be a
+	pretty daunting task. So here we are to help you through this process. Please register to
 	the website to unlock travel deals and make the best utilization of your time here.</p></div>
 
 </body>
