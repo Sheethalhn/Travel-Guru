@@ -31,7 +31,7 @@
             image = new Image();
             image.src = "./images/globe.jpeg";
             image.addEventListener('load', function() {
-  				con.drawImage(image, x, y,150,150);
+  				con.drawImage(image, x, y,200,200);
 			}, false);
 
             world.onmouseover=function() {mouseOver()};
@@ -101,8 +101,14 @@
           con = world.getContext("2d");
           con.fillStyle= "white";
           con.fillRect(550, 0, 200, 200);
-          
-          con.drawImage(image, x-100, y,200,200);
+          if (x>50){
+          x=x-100;
+          con.drawImage(image, x, y,200,200);
+          }
+          else{
+          x=550;
+          con.drawImage(image, x, y,200,200);
+          }
           
         }
           //Right Key pressed
@@ -111,8 +117,15 @@
           con.clearRect(0, 0, world.width, world.height);
           con = world.getContext("2d");
           con.fillStyle= "white";
-          con.fillRect(550, 200, 200, 200);
-          con.drawImage(image, x+100, y,220,200);
+          con.fillRect(550, 0, 200, 200);
+          if (x<1050){
+          x=x+100;
+          con.drawImage(image, x, y,200,200);
+          }
+          else{
+          x=550;
+          con.drawImage(image, x, y,200,200);
+          }
           
       }
         }
@@ -138,7 +151,7 @@
 	</canvas>
 	</div>
 	<div id="move">
-		<canvas id="world" height="200" width="900">
+		<canvas id="world" height="200" width="1400">
 	Your browser does not support the canvas tag.
 	</canvas>
 	</div>
