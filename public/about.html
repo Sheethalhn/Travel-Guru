@@ -9,7 +9,7 @@
 
 <script type="text/javascript">
 
-        var con,con1;
+        var con,con1,world;
         var image;
         var clear;
         var x  = 550;
@@ -21,18 +21,17 @@
 
         function init()
         {
-            var world = document.getElementById("world");
+            world = document.getElementById("world");
             text = document.getElementById("text");
             con = world.getContext("2d");
             con1 = text.getContext("2d");
-
             con.fillStyle = "white";
-
             image = new Image();
             image.src = "./images/globe.jpeg";
             image.addEventListener('load', function() {
   				con.drawImage(image, x, y,200,200);
 			}, false);
+			
 
             world.onmouseover=function() {mouseOver()};
             world.onmouseout=function() {mouseOut()};
@@ -54,10 +53,7 @@
 
         function draw()
         {
-
             con.clearRect(0, 0, world.width, world.height);
-            con.fillStyle="white";
-            con.fillRect(550, 0, 200, 200);
   			con.drawImage(image, x, y,200,200);
 
   			x += dx;
@@ -92,15 +88,9 @@
         }
 
         document.onkeyup = function(e){
-          con.clearRect(550, 200, 200, 200);
-          //Left key pressed
-          if (e.keyCode == '37'){
-          console.log("Move Left Key");
-          
           con.clearRect(0, 0, world.width, world.height);
-          con = world.getContext("2d");
-          con.fillStyle= "white";
-          con.fillRect(550, 0, 200, 200);
+          //Left key pressed
+          if (e.keyCode == '37'){ 
           if (x>50){
           x=x-100;
           con.drawImage(image, x, y,200,200);
@@ -113,11 +103,6 @@
         }
           //Right Key pressed
           if (e.keyCode == '39'){
-          console.log("Move Right Key");
-          con.clearRect(0, 0, world.width, world.height);
-          con = world.getContext("2d");
-          con.fillStyle= "white";
-          con.fillRect(550, 0, 200, 200);
           if (x<1050){
           x=x+100;
           con.drawImage(image, x, y,200,200);
@@ -156,11 +141,14 @@
 	</canvas>
 	</div>
 	<div class="about_page">
-	<p>We are a travel enthusiast bunch of people motivated towards helping our customers to
-	plan their dream vacation. Planning a perfect trip involves a lot of things like booking
-	flights, hotels to stay, checking the weather, figuring out must visit places and can be a
-	pretty daunting task. So here we are to help you through this process. Please register to
-	the website to unlock travel deals and make the best utilization of your time here.</p></div>
+		<p>We are a travel enthusiast bunch of people motivated towards
+			helping our customers to plan their dream vacation. Planning a
+			perfect trip involves a lot of things like booking flights, hotels to
+			stay, checking the weather, figuring out must visit places and can be
+			a pretty daunting task. So here we are to help you through this
+			process. Please register to the website to unlock travel deals and
+			make the best utilization of your time here.</p>
+	</div>
 
 </body>
 </html>

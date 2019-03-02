@@ -21,7 +21,15 @@
 
 .about_page{
 font-weight:bold;
-font-size:23px;
-font-style:Sans-serif;
+font-size:22px;
+font-style:Times;
 text-align:justify;
+text-indent: 80px;
+padding:10px;
+line-height: 1.6;
+}
+
+p::first-letter {
+  font-size: 150%;
+  color: blue;
 }
