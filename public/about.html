@@ -48,12 +48,14 @@
 
             step = 0;
             steps = text.width + 50;
+            
             moveTextLeftToRight();
         }
 
         function draw()
         {
 
+            con.clearRect(0, 0, world.width, world.height);
             con.fillStyle="white";
             con.fillRect(550, 0, 200, 200);
   			con.drawImage(image, x, y,200,200);
@@ -94,20 +96,24 @@
           //Left key pressed
           if (e.keyCode == '37'){
           console.log("Move Left Key");
-          con.clearRect(550, 0, 200, 200);
+          
+          con.clearRect(0, 0, world.width, world.height);
           con = world.getContext("2d");
           con.fillStyle= "white";
-          con.fillRect(150, 0, 200, 200);
-          con.drawImage(image, x, y,50,50);
+          con.fillRect(550, 0, 200, 200);
+          
+          con.drawImage(image, x-100, y,200,200);
+          
         }
           //Right Key pressed
           if (e.keyCode == '39'){
           console.log("Move Right Key");
-          con.clearRect(550, 0, 200, 200);
+          con.clearRect(0, 0, world.width, world.height);
           con = world.getContext("2d");
           con.fillStyle= "white";
           con.fillRect(550, 200, 200, 200);
-          con.drawImage(image, x, y,220,210);
+          con.drawImage(image, x+100, y,220,200);
+          
       }
         }
 
