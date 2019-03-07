@@ -227,3 +227,9 @@ module.exports.search = function(req,res)
     res.render('search', {city:city ,hotels: matchedCity});
 
 };
+
+module.exports.survey = function(req,res)
+{
+	res.sendFile('survey.html', { root: path.join(__dirname, '../../public/jquery-ui') });
+
+};
