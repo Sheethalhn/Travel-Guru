@@ -10,3 +10,12 @@ h1 {
     background-color: black;
     color: white;
 }
+
+#custom-handle {
+  width: 7em;
+  height: 2em;
+  top: 50%;
+  margin-top: -.8em;
+  text-align: center;
+  line-height: 1.6em;
+}
