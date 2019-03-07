@@ -1,12 +1,3 @@
 h1 {
     text-align: center;
 }
-
-#selectable .ui-selecting {
-    background-color: gray;
-}
-
-#selectable .ui-selected {
-    background-color: black;
-    color: white;
-}
