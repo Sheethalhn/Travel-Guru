@@ -24,7 +24,8 @@ function init(){
 function submit(){
   
   //$("#success").show();
-	alert("Details saved successfully");
+	//alert("Details saved successfully");
+	alert('Alert For your User!') ? "" : $(document).load();
 }
 
 function highlightTarget(event, ui)

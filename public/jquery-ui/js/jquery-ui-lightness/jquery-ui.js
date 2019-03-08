@@ -11644,11 +11644,12 @@ $.fn.datepicker = function( options ) {
 	}
 
 	/* Initialise the date picker. */
-	if ( !$.datepicker.initialized ) {
-		$( document ).on( "mousedown", $.datepicker._checkExternalClick );
-		$.datepicker.initialized = true;
-	}
 
+	if (!$.datepicker.initialized) {
+	    $(document).mousedown($.datepicker._checkExternalClick)
+	        .find(document.body).append($.datepicker.dpDiv);
+	    $.datepicker.initialized = true;
+	}
 	/* Append datepicker main container to body if not exist. */
 	if ( $( "#" + $.datepicker._mainDivId ).length === 0 ) {
 		$( "body" ).append( $.datepicker.dpDiv );
