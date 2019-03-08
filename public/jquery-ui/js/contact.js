@@ -55,6 +55,10 @@ function submit(){
     $("#lname").val(' ');
     $("#pno").val(' ');
     $("#mail").val(' ');
+    
+    $("#radio1").attr("checked",false).checkboxradio("refresh");
+    $("#radio2").attr("checked",false).checkboxradio("refresh");
+    
     $("#target").removeClass("ui-state-highlight")
     .html("Upload picture");
     $(".dragMe").css({
