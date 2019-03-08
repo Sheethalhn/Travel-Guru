@@ -5,7 +5,7 @@ function init(){
   $("p").addClass("ui-widget")
   .addClass("ui-widget-content")
   .addClass("ui-corner-all");
-  $("#location").selectmenu();
+  $("#loc").selectmenu();
   $("#days").spinner();
   $('#resizable').resizable();
 }
