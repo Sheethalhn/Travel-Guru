@@ -6,7 +6,7 @@ function init(){
   $("#datePicker").datepicker();
   $("p").addClass("ui-widget")
   .addClass("ui-widget-content")
-  .addClaass("ui-corner-all");
+  .addClass("ui-corner-all");
 }
 
 function submit(){

@@ -10,3 +10,18 @@ h1 {
     background-color: black;
     color: white;
 }
+
+div #success {
+  text-align: center;
+  color: green;
+
+}
+
+ #heads {
+  color: #3399FF;
+}
+
+#submit {
+  border-radius: 5px;
+  color: #3399FF;
+}
