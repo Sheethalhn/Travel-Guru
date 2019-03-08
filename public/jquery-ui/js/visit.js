@@ -11,9 +11,10 @@ function init(){
 }
 
 function submit(){
-  $("#loc").val("0"); 
+  $("#loc").val("0");
   $("#days").val("");
   $("#datep").val("");
   $("#resizable").val("");
   alert("Details saved successfully");
+ $("#loc").selectmenu("refresh", true); 
 }
