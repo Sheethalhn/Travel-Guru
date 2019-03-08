@@ -12,10 +12,25 @@ h1 {
 }
 
 #custom-handle {
-  width: 7em;
-  height: 2em;
+  width: 4em;
+  height: 1.5em;
   top: 50%;
   margin-top: -.8em;
   text-align: center;
-  line-height: 1.6em;
+  line-height: 1em;
+}
+
+div #successMsg {
+  text-align: center;
+  color: green;
+
+}
+
+ #heads {
+  color: #3399FF;
+}
+
+#submit {
+  border-radius: 5px;
+  color: #3399FF;
 }

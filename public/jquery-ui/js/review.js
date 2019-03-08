@@ -1,4 +1,4 @@
-
+$("#successMsg").hide();
 
 $( function() {
   var handle = $( "#custom-handle" );
@@ -27,21 +27,21 @@ function init(){
 function submit(){
   $("#resize").val("");
   $("#location").val("");
-
+  $("#successMsg").show();
 }
 
-function reportSlider()
-{
-    var sliderVal = $("#slider").slider("value");
-    $("#slideOutput").html(sliderVal);
-}
-
-function openDialog()
-{
-    $("#dialog").dialog("open");
-}
-
-function closeDialog()
-{
-    $("#dialog").dialog("close");
-}
+// function reportSlider()
+// {
+//     var sliderVal = $("#slider").slider("value");
+//     $("#slideOutput").html(sliderVal);
+// }
+//
+// function openDialog()
+// {
+//     $("#dialog").dialog("open");
+// }
+//
+// function closeDialog()
+// {
+//     $("#dialog").dialog("close");
+// }
