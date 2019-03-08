@@ -25,7 +25,11 @@ function submit(){
   
   //$("#success").show();
 	//alert("Details saved successfully");
-	alert('Details saved successfully !') ? "" : $(document).load();
+    alert('Details saved successfully !') ? "" : $(document).load();
+    $("#fname").val(' ');
+    $("#lname").val(' ');
+    $("#pno").val(' ');
+    $("#mail").val(' ');
 }
 
 function highlightTarget(event, ui)
