@@ -13,6 +13,7 @@ function init(){
 
 function submit(){
   $("#location").val("");
-  $("#successMsg").show();
+  //$("#successMsg").show();
+  alert("Details saved successfully");
 
 }

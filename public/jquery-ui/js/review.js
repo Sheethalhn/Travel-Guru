@@ -27,7 +27,8 @@ function init(){
 function submit(){
   $("#resize").val("");
   $("#location").val("");
-  $("#successMsg").show();
+ // $("#successMsg").show();
+  alert("Details saved successfully");
 }
 
 // function reportSlider()

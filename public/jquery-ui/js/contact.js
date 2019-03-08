@@ -23,7 +23,8 @@ function init(){
 
 function submit(){
   
-  $("#success").show();
+  //$("#success").show();
+	alert("Details saved successfully");
 }
 
 function highlightTarget(event, ui)
