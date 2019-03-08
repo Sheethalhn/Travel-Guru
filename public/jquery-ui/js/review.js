@@ -6,7 +6,7 @@ $( function() {
     create: function() {
       handle.text( $( this ).slider( "value" ) );
     },
-    min: 1,
+    min: 0,
     max: 10,
     step: 0.5,
     slide: function( event, ui ) {
@@ -21,7 +21,7 @@ function init(){
   $("#resize").resizable();
   $("p").addClass("ui-widget")
   .addClass("ui-widget-content")
-  .addClaass("ui-corner-all");
+  .addClass("ui-corner-all");
 }
 
 function submit(){

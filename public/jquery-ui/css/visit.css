@@ -25,3 +25,8 @@ div #successMsg {
   border-radius: 5px;
   color: #3399FF;
 }
+
+input [name="days"] {
+    width:500px; 
+    height:50px;
+}

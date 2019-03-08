@@ -34,3 +34,8 @@ div #successMsg {
   border-radius: 5px;
   color: #3399FF;
 }
+
+#resize {
+   width:400px;
+   height:100px;
+}
