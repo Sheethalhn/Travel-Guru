@@ -28,21 +28,8 @@ function submit(){
   $("#resize").val("");
   $("#location").val("");
  // $("#successMsg").show();
-  alert("Details saved successfully");
+  alert("Review submitted successfully");
+  $('#slider').slider("value", 0);
+  var handle = $( "#custom-handle" );
+  handle.text(0);
 }
-
-// function reportSlider()
-// {
-//     var sliderVal = $("#slider").slider("value");
-//     $("#slideOutput").html(sliderVal);
-// }
-//
-// function openDialog()
-// {
-//     $("#dialog").dialog("open");
-// }
-//
-// function closeDialog()
-// {
-//     $("#dialog").dialog("close");
-// }
