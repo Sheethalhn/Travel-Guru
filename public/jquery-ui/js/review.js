@@ -27,7 +27,6 @@ function init(){
 function submit(){
   $("#resize").val("");
   $("#location").val("");
- // $("#successMsg").show();
   alert("Review submitted successfully");
   $('#slider').slider("value", 0);
   var handle = $( "#custom-handle" );

@@ -11,11 +11,9 @@ function init(){
 }
 
 function submit(){
-  $("#location option:eq(0)").attr('selected','selected');
+  $("#loc").val("0"); 
   $("#days").val("");
   $("#datep").val("");
   $("#resizable").val("");
-  //$("#successMsg").show();
   alert("Details saved successfully");
-
 }
