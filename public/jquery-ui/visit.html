@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Travel Guru</title>
+<link rel="stylesheet" href="../stylesheets/landing.css" />
+<link rel="stylesheet" type="text/css" href="../jquery-ui/css/jquery-ui-lightness/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../jquery-ui/css/survey.css" />
+<link rel="stylesheet" type="text/css" href="../jquery-ui/css/visit.css" />
+<script type="text/javascript" src="../jquery-ui/js/jquery.js"></script>
+<script type="text/javascript" src="../jquery-ui/js/jquery-ui-lightness/jquery-ui.js"></script>
+<script type="text/javascript" src="../jquery-ui/js/visit.js"></script>
+</head>
+<body>
+  <div>
+    <h3 id="heads">Please share your travel experience here:</h3>
+    <div id="successMsg">Thank you for your visit details!</div>
+      <p>
+      		 <h5 id="heads"><label>Select Location:</label>
+      		<select name="location">
+      		 <h5 id="heads"><option value="San Francisco" selected>San Francisco</option></h5></br>
+      			 <h5 id="heads"><option value ="Las Vegas">Las Vegas</option></h5></br>
+      			 <h5 id="heads"><option value ="Los Angeles">Los Angeles</option></h5></br>
+      		</select>
+      	</p>
+      			
+   <h5 id="heads">Select Date of Travel:</h5></br>
+      <input type="text" id="datePicker"></input></br>
+     
+      <h5 id="heads">Enter number of days of travel:</h5></br>
+      <input name="days" type="text" /></input></br>
+      
+       <h5 id="heads">Enter any comments to share your travel experience</h5></br>
+      <input name="days" type="text" /></input></br>
+      
+    </br><button id="submit" onClick=submit();>Submit</button>
+  </div>
+</body>
+</html>
