@@ -1,4 +1,4 @@
-$("#successMsg").hide();
+
 $(init);
 function init(){
   $("#datep").datepicker();
@@ -11,10 +11,9 @@ function init(){
 }
 
 function submit(){
-  $("#loc").val("0");
+  alert("Details saved successfully");
   $("#days").val("");
   $("#datep").val("");
   $("#resizable").val("");
-  alert("Details saved successfully");
- $("#loc").selectmenu("refresh", true); 
+  $("#loc").selectmenu("refresh", true); 
 }

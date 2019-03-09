@@ -1,4 +1,4 @@
-$("#successMsg").hide();
+
 
 $( function() {
   var handle = $( "#custom-handle" );
@@ -25,9 +25,9 @@ function init(){
 }
 
 function submit(){
-  $("#resize").val("");
-  $("#location").val("");
+  
   alert("Review submitted successfully");
+  $("#resize").val("");
   $('#slider').slider("value", 0);
   var handle = $( "#custom-handle" );
   handle.text(0);
