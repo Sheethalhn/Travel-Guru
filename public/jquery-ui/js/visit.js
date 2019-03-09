@@ -15,5 +15,6 @@ function submit(){
   $("#days").val("");
   $("#datep").val("");
   $("#resizable").val("");
+  $("#loc").val("0");
   $("#loc").selectmenu("refresh", true); 
 }
