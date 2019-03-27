@@ -14,17 +14,17 @@
             email = document.getElementById("emailAddress").value;
             password  = document.getElementById("password").value;
             confpassword  = document.getElementById("confirmPassword").value;
-            
+
             errors = "";
-    
+
             if (fname == "") {
                 errors += "Missing First name.\n";
-            } 
-            
+            }
+
             if (lname == "") {
                 errors += "Missing Last name.\n";
-            } 
-            
+            }
+
             phoneRE = /^\(\d{3}\) *\d{3}-\d{4}$/;
             if (phone == ""){
             	errors += "Missing Phone number. \n";
@@ -32,8 +32,8 @@
             else if (!phone.match(phoneRE)){
                 errors += "Invalid phone number. " +
                           "Example: (999) 999-9999\n";
-            } 
-    
+            }
+
             emailRE = /^.+@.+\..{2,4}$/;
             if (email == ""){
             	errors += "Missing Email address. \n";
@@ -41,7 +41,7 @@
             else if (!email.match(emailRE)){
                 errors += "Invalid email address. " +
                           "Example: xxx@xxx.xxx\n";
-            } 
+            }
             passwordRE=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
             if (password == "") {
                 errors += "Missing Password.\n";
@@ -73,6 +73,7 @@
 			<a href="/" class="header-icon1"> Home</a> <span class="line"></span>
 			<a href="/about" class="header-icon1"> About</a> <span class="line"></span>
 			<a href="/survey" class="header-icon1"> Survey</a> <span class="line"></span>
+      <a href="/admin" class="header-icon2">Admin</a> <span class="line"></span>
 			<a href="/register" class="header-icon1"> Register</a> <span
 				class="line"></span> <a href="/login" class="header-icon2">
 				Login</a>

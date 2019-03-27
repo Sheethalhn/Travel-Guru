@@ -31,7 +31,7 @@
             image.addEventListener('load', function() {
   				con.drawImage(image, x, y,200,200);
 			}, false);
-			
+
 
             world.onmouseover=function() {mouseOver()};
             world.onmouseout=function() {mouseOut()};
@@ -47,7 +47,7 @@
 
             step = 0;
             steps = text.width + 50;
-            
+
             moveTextLeftToRight();
         }
 
@@ -90,7 +90,7 @@
         document.onkeyup = function(e){
           con.clearRect(0, 0, world.width, world.height);
           //Left key pressed
-          if (e.keyCode == '37'){ 
+          if (e.keyCode == '37'){
           if (x>50){
           x=x-100;
           con.drawImage(image, x, y,200,200);
@@ -99,7 +99,7 @@
           x=550;
           con.drawImage(image, x, y,200,200);
           }
-          
+
         }
           //Right Key pressed
           if (e.keyCode == '39'){
@@ -111,7 +111,7 @@
           x=550;
           con.drawImage(image, x, y,200,200);
           }
-          
+
       }
         }
 

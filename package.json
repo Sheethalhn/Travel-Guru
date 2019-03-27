@@ -29,6 +29,8 @@
     "line-reader": "^0.4.0",
     "load-grunt-tasks": "3.4.0",
     "morgan": "~1.9.0",
+    "mongodb": "^3.0.11",
+    "monk": "^6.0.6",
     "rimraf": "2.5.1",
     "testswarm": "1.1.0"
   }

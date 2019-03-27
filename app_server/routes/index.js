@@ -12,4 +12,7 @@ router.post('/search', cntrMain.search)
 router.get('/about', cntrMain.about)
 router.get('/survey', cntrMain.survey)
 
+router.get('/admin', cntrMain.admin)
+router.post('/admin', cntrMain.addDestination)
+
 module.exports = router;

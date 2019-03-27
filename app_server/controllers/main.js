@@ -4,6 +4,7 @@
 var lineReader = require('line-reader');
 var path = require('path');
 var registeredUsers = [];
+var request = require('request');
 
 /**
  * Send the contents of an HTML page to the client.
@@ -71,6 +72,13 @@ module.exports.about = function(req,res)
 
 };
 
+//Get admin page
+module.exports.admin = function(req,res)
+{
+	res.sendFile('admin.html', { root: path.join(__dirname, '../../public') });
+
+};
+
 module.exports.postRegister = function(req,res)
 {
 
@@ -118,9 +126,83 @@ module.exports.postLogin = function(req,res)
     else
     {
     	res.render('loggedin', { name: matches[0].firstName});
-
     }
+};
 
+//MongoDB Add city form handling -> addDestination
+module.exports.addDestination = function(req, res)
+{
+    //Test data
+    var cityName = "Los Angeles";
+    var hotelName = "LA hotel";
+    var pricePerNight = "$100";
+    var aboutHotel = "about hotel";
+    var contactNumber = "contact";
+    //Working on this, request body is coming blank
+    // var cityName = req.body.cityName;
+    // var hotelName = req.body.hotelName;
+    // var pricePerNight = req.body.pricePerNight;
+    // var aboutHotel = req.body.aboutHotel;
+    // var contactNumber = req.body.contactNumber;
+    var myCity = {
+              cityName : cityName,
+              hotelName: hotelName,
+              pricePerNight : pricePerNight,
+              aboutHotel : aboutHotel,
+              contactNumber : contactNumber
+                };
+    console.log("city: ", cityName);
+    // console.log("hotel: ", this.hotelName);
+    // console.log("ppn: ", this.pricePerNight);
+    // console.log("hotel: ", this.aboutHotel);
+    // console.log("contact: ", this.contactNumber);
+
+    var mongo = require('mongodb').MongoClient;
+    var url = "mongodb://localhost:27017/travelGuru";
+    mongo.connect(url, function(err, db) {
+      if (err) throw err;
+      var travelDB = db.db("travelGuru");
+      var collection = travelDB.collection("destinations");
+
+      //Create collection if does not exist already
+      if (!travelDB.collection("destinations")) {
+
+            travelDB.createCollection("destinations", function(err, res) {
+              if (err) throw err;
+              console.log("destinations collection is created!");
+              //  console.log("Collection for destinations created!");
+              });
+            }
+            travelDB.collection("destinations").insertOne(myCity, function(err, res) {
+              if (err) throw err;
+              console.log("Sample insert in destinations collection");
+              db.close();
+              });
+          });
+      // Get our form values. These rely on the "name" attributes.
+    // var cityName = req.body.cityName;
+    // var hotelName = req.body.hotelName;
+    // var pricePerNight = req.body.pricePerNight;
+    // var aboutHotel = req.body.aboutHotel;
+    // var contactNumber = req.body.contactNumber;
+    // Submit to the database.
+    // collection.insert( { "cityName" : cityName,
+    //                      "hotelName" : hotelName,
+    //                      "pricePerNight" : pricePerNight,
+    //                      "aboutHotel" : aboutHotel,
+    //                      "contactNumber" : contactNumber},
+    //                    function (err, docs)
+    //                    {
+    //                        if (err) {
+    //                            res.send("Insertion failed.");
+    //                        }
+    //                        else {
+    //                            res.redirect("admin");
+    //                            console.log("DB is:", db);
+    //                            console.log("Collection is:", collection);
+    //                            console.log("City added successfully!")
+    //                        }
+    //                    });
 };
 
 //location details
@@ -223,13 +305,10 @@ module.exports.search = function(req,res)
     let matchedCity = cities.filter(val => {
         return ((val.city === city));
     })
-
     res.render('search', {city:city ,hotels: matchedCity});
-
 };
 
 module.exports.survey = function(req,res)
 {
 	res.sendFile('survey.html', { root: path.join(__dirname, '../../public/jquery-ui') });
-
 };
