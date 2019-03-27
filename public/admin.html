@@ -5,6 +5,22 @@
 <title>Travel Guru</title>
 <link rel="stylesheet" href="stylesheets/landing.css" />
 <link rel="stylesheet" href="stylesheets/register.css" />
+<script type="text/javascript" src="jquery1.8.2.js">
+$('form').submit(function(e){
+e.preventDefault();
+      var obj = {
+        cityName: $('input[name=cityName]').val(),
+        hotelName: $('input[name=hotelName]').val(),
+        pricePerNight: $('input[name=pricePerNight]').val(),
+				aboutHotel: $('input[name=aboutHotel]').val(),
+        contactNumber: $('input[name=contactNumber]').val()
+      }
+      console.log(obj);
+
+alert("printed in console");
+    });
+
+</script>
 </head>
 <body>
 <div class="wrap_header">
@@ -24,23 +40,23 @@
 			<legend>Admin Page</legend>
 			<p>
 				<label class="form-label">City</label>
-				<input id="cityName" type="text" placeholder="Enter city" required />
+				<input id="cityName" name="cityName" type="text" placeholder="Enter city" required />
 			</p>
 			<p>
 				<label class="form-label">Hotel</label>
-				<input id="hotelName" type="text" placeholder="Enter Hotel" required/>
+				<input id="hotelName" type="text" name="hotelName" placeholder="Enter Hotel" required/>
 			</p>
 			<p>
 				<label class="form-label">Price per night</label>
-				<input id="pricePerNight" type="text" placeholder="Price per night" required />
+				<input id="pricePerNight" name="pricePerNight" type="text" placeholder="Price per night" required />
 			</p>
 			<p>
 				<label class="form-label">Details</label>
-				<input id="aboutHotel" type="text" placeholder="More about Hotel" required/>
+				<input id="aboutHotel" name="aboutHotel" type="text" placeholder="More about Hotel" required/>
 			</p>
 			<p>
 				<label class="form-label">Contact</label>
-				<input id="contactNumber" type="text" placeholder="Contact Number" required/>
+				<input id="contactNumber" name="contactNumber" type="text" placeholder="Contact Number" required/>
 			</p>
 			<div class="form-buttons">
 			<p>

@@ -133,17 +133,18 @@ module.exports.postLogin = function(req,res)
 module.exports.addDestination = function(req, res)
 {
     //Test data
-    var cityName = "Los Angeles";
-    var hotelName = "LA hotel";
-    var pricePerNight = "$100";
-    var aboutHotel = "about hotel";
-    var contactNumber = "contact";
+    console.log("BODY: ", req.body);
+    // var cityName = "Los Angeles";
+    // var hotelName = "LA hotel";
+    // var pricePerNight = "$100";
+    // var aboutHotel = "about hotel";
+    // var contactNumber = "contact";
     //Working on this, request body is coming blank
-    // var cityName = req.body.cityName;
-    // var hotelName = req.body.hotelName;
-    // var pricePerNight = req.body.pricePerNight;
-    // var aboutHotel = req.body.aboutHotel;
-    // var contactNumber = req.body.contactNumber;
+    var cityName = req.body.cityName;
+    var hotelName = req.body.hotelName;
+    var pricePerNight = req.body.pricePerNight;
+    var aboutHotel = req.body.aboutHotel;
+    var contactNumber = req.body.contactNumber;
     var myCity = {
               cityName : cityName,
               hotelName: hotelName,
@@ -152,6 +153,7 @@ module.exports.addDestination = function(req, res)
               contactNumber : contactNumber
                 };
     console.log("city: ", cityName);
+    console.log("contact: ", contactNumber);
     // console.log("hotel: ", this.hotelName);
     // console.log("ppn: ", this.pricePerNight);
     // console.log("hotel: ", this.aboutHotel);
