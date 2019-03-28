@@ -77,11 +77,11 @@ module.exports.post_adddest = function(req, res)
  */
 module.exports.post_deletedest = function(req, res) 
 {
-    var uname = req.params.username;
+    var uname = req.params.hotelName;
     var db = req.db;
     var collection = db.get('destination');
 
-    collection.remove( { "username" : uname },
+    collection.remove( { "hotel_name" : hotelName },
                        function (err, doc) 
                        {
                            if (err) {

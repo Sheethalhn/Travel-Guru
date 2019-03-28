@@ -35,10 +35,10 @@ td:nth-child(1) {
   width: 200px;
   }
 td:nth-child(2) {
- width: 800px;
+ width: 600px;
  }
  td:nth-child(3) {
- width: 100px;
+ width: 300px;
  }
  td:nth-child(4) {
  width: 200px;
@@ -59,4 +59,16 @@ td:nth-child(2) {
   }
   .welcome-message{
   text-align:center;
+  }
+  
+  h1,.headings{
+    text-align:center;
+  }
+  
+  .button{
+  font-weight:bold;
+  font-size:24px;
+  margin:10px;
+  length:10px;
+  width: 250px;
   }

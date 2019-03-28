@@ -1,12 +1,16 @@
 extends layout
 
 block content
-  p Welcome to #{title}
+  h1.
+   Welcome to #{title}
   if message
         p #{message}
-  form#formOptions(name="options" method="post")
-        button#btnload(type="submit",formaction="/data") Load Data
-  form#formGet(name="getForm" method="get")
-        button#btnadd(type="submit",formaction="/admin") Add Destination
-        button#btnedit(type="submit",formaction="/userlist") Display Destinations
+  div
+   form#formOptions(name="options" method="post")
+        button#btnload(type="submit",formaction="/data",class="button") Load Data
+  div
+   form#formGet(name="getForm" method="get")
+        button#btnadd(type="submit",formaction="/admin",class="button") Add Destination
+        div
+         button#btnedit(type="submit",formaction="/userlist",class="button") Display Destinations
   

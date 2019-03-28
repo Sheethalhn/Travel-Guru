@@ -2,8 +2,24 @@ extends layout
 
 block content
     h1.
-        Destination List
-    ul
-        each destination in destlist
-            li
-                a(href="#{destination.hotel_name}")= destination.city
+        Destination Details
+     
+    div
+    table.table.table-hover(class="city-table")
+     div
+      thead
+          tr(class="table-header")
+           td='City'
+           td='Hotel Name'
+           td='Hotel Address'
+           td='Phone Number'
+           td='Price per night'
+      tbody
+        each hotel in destlist
+         tr(class="table-rows")
+          td=hotel.city
+          td=hotel.hotel_name
+          td=hotel.hotel_address
+          td=hotel.phone
+          td=hotel.cost
+     
