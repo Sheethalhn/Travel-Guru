@@ -72,10 +72,17 @@ module.exports.about = function(req,res)
 
 };
 
-//Get admin page
+//Get admin page for add update delete travel destinations
 module.exports.admin = function(req,res)
 {
 	res.sendFile('admin.html', { root: path.join(__dirname, '../../public') });
+
+};
+
+//Get admin page for searching, updating and deleting destinations
+module.exports.update = function(req,res)
+{
+	res.sendFile('update.html', { root: path.join(__dirname, '../../public') });
 
 };
 
@@ -134,12 +141,6 @@ module.exports.addDestination = function(req, res)
 {
     //Test data
     console.log("BODY: ", req.body);
-    // var cityName = "Los Angeles";
-    // var hotelName = "LA hotel";
-    // var pricePerNight = "$100";
-    // var aboutHotel = "about hotel";
-    // var contactNumber = "contact";
-    //Working on this, request body is coming blank
     var cityName = req.body.cityName;
     var hotelName = req.body.hotelName;
     var pricePerNight = req.body.pricePerNight;
@@ -153,8 +154,7 @@ module.exports.addDestination = function(req, res)
               contactNumber : contactNumber
                 };
     console.log("city: ", cityName);
-    console.log("contact: ", contactNumber);
-
+    // console.log("contact: ", contactNumber);
     var mongo = require('mongodb').MongoClient;
     var url = "mongodb://localhost:27017/travelGuru";
     mongo.connect(url, function(err, db) {
@@ -178,6 +178,39 @@ module.exports.addDestination = function(req, res)
               });
           });
           res.sendFile('admin.html', { root: path.join(__dirname, '../../public') });
+};
+
+//MongoDB Search Destination
+module.exports.searchCity = function(req, res)
+{
+    //Test data
+    console.log("SEARCH BODY: ", req.body);
+    var cityName = req.body.cityName;
+    console.log("city: ", cityName);
+
+    var mongo = require('mongodb').MongoClient;
+    var url = "mongodb://localhost:27017/travelGuru";
+    mongo.connect(url, function(err, db) {
+      if (err) throw err;
+      var travelDB = db.db("travelGuru");
+      var collection = travelDB.collection("destinations");
+
+      //Create collection if does not exist already
+      if (!travelDB.collection("destinations")) {
+              console.log("No valid DB exists!");
+              //  console.log("Collection for destinations created!");
+              }
+            var query = {cityName: cityName};
+            travelDB.collection("destinations").find(query).toArray(function(err, result) {
+            if (err) throw err;
+            var result = result;
+            console.log(result);
+            db.close();
+          });
+          // res.render('update', {result});
+});
+res.sendFile('update.html', { root: path.join(__dirname, '../../public') });
+// res.send();
 };
 
 //location details

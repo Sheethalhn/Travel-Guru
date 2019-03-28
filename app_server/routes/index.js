@@ -15,4 +15,7 @@ router.get('/survey', cntrMain.survey)
 router.get('/admin', cntrMain.admin)
 router.post('/admin', cntrMain.addDestination)
 
+router.get('/update', cntrMain.update)
+router.post('/update', cntrMain.searchCity)
+
 module.exports = router;
