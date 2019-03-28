@@ -72,3 +72,13 @@ td:nth-child(2) {
   length:10px;
   width: 250px;
   }
+  
+  .headerIcon{
+    height: 27px;
+    position: relative;
+    font-size:large;
+    color:black;
+    font-weight:bold;
+    left:1000px;
+    bottom:30px;
+  }
