@@ -5,52 +5,28 @@
 <title>Travel Guru</title>
 <link rel="stylesheet" href="stylesheets/landing.css" />
 <link rel="stylesheet" href="stylesheets/register.css" />
-<script type="text/javascript" src="jquery1.8.2.js">
-$('form').search(function(e){
-e.preventDefault();
-      var searchObj = {
-        cityName: $('input[name=cityName]').val(),
-      }
-      console.log(searchObj);
-      alert("Search DB for : ", searchObj);
-    });
-
-function searchCity(){
-  console.log("Search city done!");
-}
-
-</script>
 </head>
 <body>
-<div class="wrap_header">
-			<a href="/"><img src="images\icon.jpg" alt="IMG-LOGO" class="icon" /></a>
-			<div class="header-icons">
-				<a href="/data" class="header-icon2">Admin Dashboard</a>
-			</div>
+	<div class="wrap_header">
+		<a href="/"><img src="images\icon.jpg" alt="IMG-LOGO" class="icon" /></a>
+		<div class="header-icons">
+			<a href="/data" class="header-icon2">Admin Dashboard</a>
 		</div>
+	</div>
 	<div class="registration-form">
-	<form method="post" action="/update">
-		<fieldset>
-			<legend>Admin Search then Update/Delete</legend>
-			<p>
-				<label class="form-label">Search City: </label>
-				<input id="cityName" name="cityName" type="text" placeholder="Enter city" required />
-			</p>
-      <input type="submit" value="Search city" onclick="searchCity();"/>
-      <table>
-        <th>Hotel Name</th><th>Price</th><th>Contact</th>
-      </table>
-      <p id="result">
-        Display search results  here:
-      <!-- {result} -->
-    <!-- </p>
-				<input type="submit" value="Update" onclick="window.location.href='/'"/>
-				<input type="submit" value="Delete" onclick="window.location.href='/'"/>
-        <input type="reset" value="Cancel" onclick="window.location.href='/'"/>
-			</p> -->
-			</div>
-		</fieldset>
+		<form method="post" action="/update">
+			<fieldset>
+				<legend>Admin Search to Update/Delete</legend>
+				<p>
+					<label class="form-label">Search Hotel: </label> <input
+						id="hotelName" name="hotelName" type="text" placeholder="Enter Hotel name"
+						required />
+				</p>
+				<input type="submit" value="Search Hotel" />
+					</fieldset>
 	</form>
+	</div>
+
 	</div>
 
 </body>

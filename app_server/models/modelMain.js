@@ -124,32 +124,18 @@ module.exports.post_loaddataset = function(req, res){
 //MongoDB Search Destination
 module.exports.searchCity = function(req, res)
 {
-    //Test data
-    console.log("SEARCH BODY: ", req.body);
-    var cityName = req.body.cityName;
-    console.log("city: ", cityName);
-
-    var mongo = require('mongodb').MongoClient;
-    var url = "mongodb://localhost:27017/travelGuru";
-    mongo.connect(url, function(err, db) {
-      if (err) throw err;
-      var travelDB = db.db("travelGuru");
-      var collection = travelDB.collection("destinations");
-
-      //Create collection if does not exist already
-      if (!travelDB.collection("destinations")) {
-              console.log("No valid DB exists!");
-              //  console.log("Collection for destinations created!");
-              }
-            var query = {cityName: cityName};
-            travelDB.collection("destinations").find(query).toArray(function(err, result) {
-            if (err) throw err;
-            var result = result;
-            console.log(result);
-            db.close();
-          });
-          // res.render('update', {result});
-});
-res.sendFile('update.html', { root: path.join(__dirname, '../../public') });
-// res.send();
+    var hotelName = req.body.hotelName;
+    var db = req.db;
+    var collection = db.get('destination');
+    
+    collection.find( { hotel_name : hotelName }, 
+                     function(err, doc) 
+                     {
+                         if (err) {
+                             res.send("Find failed.");
+                         }
+                         else {
+                        	 res.render('userlist', { "destlist" : doc });
+                         }
+                     });
 };
