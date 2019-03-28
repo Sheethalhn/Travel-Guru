@@ -154,10 +154,6 @@ module.exports.addDestination = function(req, res)
                 };
     console.log("city: ", cityName);
     console.log("contact: ", contactNumber);
-    // console.log("hotel: ", this.hotelName);
-    // console.log("ppn: ", this.pricePerNight);
-    // console.log("hotel: ", this.aboutHotel);
-    // console.log("contact: ", this.contactNumber);
 
     var mongo = require('mongodb').MongoClient;
     var url = "mongodb://localhost:27017/travelGuru";
@@ -181,30 +177,7 @@ module.exports.addDestination = function(req, res)
               db.close();
               });
           });
-      // Get our form values. These rely on the "name" attributes.
-    // var cityName = req.body.cityName;
-    // var hotelName = req.body.hotelName;
-    // var pricePerNight = req.body.pricePerNight;
-    // var aboutHotel = req.body.aboutHotel;
-    // var contactNumber = req.body.contactNumber;
-    // Submit to the database.
-    // collection.insert( { "cityName" : cityName,
-    //                      "hotelName" : hotelName,
-    //                      "pricePerNight" : pricePerNight,
-    //                      "aboutHotel" : aboutHotel,
-    //                      "contactNumber" : contactNumber},
-    //                    function (err, docs)
-    //                    {
-    //                        if (err) {
-    //                            res.send("Insertion failed.");
-    //                        }
-    //                        else {
-    //                            res.redirect("admin");
-    //                            console.log("DB is:", db);
-    //                            console.log("Collection is:", collection);
-    //                            console.log("City added successfully!")
-    //                        }
-    //                    });
+          res.sendFile('admin.html', { root: path.join(__dirname, '../../public') });
 };
 
 //location details
@@ -292,7 +265,7 @@ const cities = [
 	},
 	{
 		city:'Los Angeles',name: 'Viceroy Santa Monica', desc: "Where LA meets the Ocean - British" +
-				" impressions- with bold current perspectives. Business friendly- yet vacation" +
+  				" impressions- with bold current perspectives. Business friendly- yet vacation" +
 				" ready- and just steps from the Santa Monica pier- beaches- shopping- dinning and" +
 				" nightlife. Each of the 162 guestrooms and suites offer ocean- pool- or palm" +
 				" views. ",price:'$450',phone:'(310) 260-7500'
