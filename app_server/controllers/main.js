@@ -136,82 +136,7 @@ module.exports.postLogin = function(req,res)
     }
 };
 
-//MongoDB Add city form handling -> addDestination
-module.exports.addDestination = function(req, res)
-{
-    //Test data
-    console.log("BODY: ", req.body);
-    var cityName = req.body.cityName;
-    var hotelName = req.body.hotelName;
-    var pricePerNight = req.body.pricePerNight;
-    var aboutHotel = req.body.aboutHotel;
-    var contactNumber = req.body.contactNumber;
-    var myCity = {
-              cityName : cityName,
-              hotelName: hotelName,
-              pricePerNight : pricePerNight,
-              aboutHotel : aboutHotel,
-              contactNumber : contactNumber
-                };
-    console.log("city: ", cityName);
-    // console.log("contact: ", contactNumber);
-    var mongo = require('mongodb').MongoClient;
-    var url = "mongodb://localhost:27017/travelGuru";
-    mongo.connect(url, function(err, db) {
-      if (err) throw err;
-      var travelDB = db.db("travelGuru");
-      var collection = travelDB.collection("destinations");
 
-      //Create collection if does not exist already
-      if (!travelDB.collection("destinations")) {
-
-            travelDB.createCollection("destinations", function(err, res) {
-              if (err) throw err;
-              console.log("destinations collection is created!");
-              //  console.log("Collection for destinations created!");
-              });
-            }
-            travelDB.collection("destinations").insertOne(myCity, function(err, res) {
-              if (err) throw err;
-              console.log("Sample insert in destinations collection");
-              db.close();
-              });
-          });
-          res.sendFile('admin.html', { root: path.join(__dirname, '../../public') });
-};
-
-//MongoDB Search Destination
-module.exports.searchCity = function(req, res)
-{
-    //Test data
-    console.log("SEARCH BODY: ", req.body);
-    var cityName = req.body.cityName;
-    console.log("city: ", cityName);
-
-    var mongo = require('mongodb').MongoClient;
-    var url = "mongodb://localhost:27017/travelGuru";
-    mongo.connect(url, function(err, db) {
-      if (err) throw err;
-      var travelDB = db.db("travelGuru");
-      var collection = travelDB.collection("destinations");
-
-      //Create collection if does not exist already
-      if (!travelDB.collection("destinations")) {
-              console.log("No valid DB exists!");
-              //  console.log("Collection for destinations created!");
-              }
-            var query = {cityName: cityName};
-            travelDB.collection("destinations").find(query).toArray(function(err, result) {
-            if (err) throw err;
-            var result = result;
-            console.log(result);
-            db.close();
-          });
-          // res.render('update', {result});
-});
-res.sendFile('update.html', { root: path.join(__dirname, '../../public') });
-// res.send();
-};
 
 //location details
 const cities = [
@@ -319,4 +244,30 @@ module.exports.search = function(req,res)
 module.exports.survey = function(req,res)
 {
 	res.sendFile('survey.html', { root: path.join(__dirname, '../../public/jquery-ui') });
+};
+
+
+/*
+ * GET home page.
+ */
+module.exports.options = function(req, res) 
+{
+    res.render('index', { "title": 'admin dashboard.' });
+};
+
+/*
+ * GET new user page.
+ */
+module.exports.get_newuser = function(req, res) 
+{
+    res.render('newuser', { "title": 'Add New User' });
+};
+
+/*
+ * GET delete user page.
+ */
+module.exports.get_deleteuser = function(req, res) 
+{
+    var uname = req.params.username;
+    res.render('deleteuser', { "username" : uname} );
 };

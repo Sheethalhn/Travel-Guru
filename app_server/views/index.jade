@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
   p Welcome to #{title}
+  if message
+        p #{message}
+  form#formOptions(name="options" method="post")
+        button#btnload(type="submit",formaction="/data") Load Data
+  form#formGet(name="getForm" method="get")
+        button#btnadd(type="submit",formaction="/admin") Add Destination
+        button#btnedit(type="submit",formaction="/userlist") Display Destinations
+  

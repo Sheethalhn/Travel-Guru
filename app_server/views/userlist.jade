@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1.
+        Destination List
+    ul
+        each destination in destlist
+            li
+                a(href="#{destination.hotel_name}")= destination.city

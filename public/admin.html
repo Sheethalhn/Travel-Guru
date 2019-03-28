@@ -12,7 +12,7 @@ e.preventDefault();
         cityName: $('input[name=cityName]').val(),
         hotelName: $('input[name=hotelName]').val(),
         pricePerNight: $('input[name=pricePerNight]').val(),
-				aboutHotel: $('input[name=aboutHotel]').val(),
+				hotelAddress: $('input[name=hoteladdress]').val(),
         contactNumber: $('input[name=contactNumber]').val()
       }
       console.log(obj);
@@ -43,24 +43,25 @@ alert("printed in console");
 				<input id="cityName" name="cityName" type="text" placeholder="Enter city" required />
 			</p>
 			<p>
-				<label class="form-label">Hotel</label>
+				<label class="form-label">Hotel Name</label>
 				<input id="hotelName" type="text" name="hotelName" placeholder="Enter Hotel" required/>
+			</p>
+			<p>
+				<label class="form-label">Hotel Address</label>
+				<input id="hotelAddress" name="hotelAddress" type="text" placeholder="Hotel Address" required/>
 			</p>
 			<p>
 				<label class="form-label">Price per night</label>
 				<input id="pricePerNight" name="pricePerNight" type="text" placeholder="Price per night" required />
 			</p>
-			<p>
-				<label class="form-label">Details</label>
-				<input id="aboutHotel" name="aboutHotel" type="text" placeholder="More about Hotel" required/>
-			</p>
+
 			<p>
 				<label class="form-label">Contact</label>
 				<input id="contactNumber" name="contactNumber" type="text" placeholder="Contact Number" required/>
 			</p>
 			<div class="form-buttons">
 			<p>
-				<input type="submit" value="Add Travel Destination"/>
+				<input type="submit" value="Add Destination"/>
 				<input type="reset" value="Cancel" onclick="window.location.href='/'"/><br/>
 				<input type="submit" value="Search" onclick="window.location.href='/searchCity'"/>
 				<!-- <input type="submit" value="Delete" onclick="window.location.href='/update'"/> -->
