@@ -122,8 +122,7 @@ module.exports.post_updatedest = function(req, res)
     var cNumber = req.body.phone;
 
     collection.update( {  "hotel_name" : hname  },
-    					{$set: {"city" : cName,
-                            "hotel_name" : hname,
+    					{$set: {
                             "hotel_address" : hAddress,
                             "phone" : cNumber,
                             "cost" :price}},

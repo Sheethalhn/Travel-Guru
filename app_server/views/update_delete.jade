@@ -6,11 +6,12 @@ block content
 			form(method="post" class="form")
 				fieldset
 					legend Update or Delete Destination
+
 					label(for="city" class="form-label") City:
-					input(type="text" value= "#{hotel.city}" name="city")
+					input(type="text" value= "#{hotel.city}" name="city" readonly)
 					div
 					label(for="hotel_name" class="form-label") Hotel Name:
-					input(type="text" value= "#{hotel.hotel_name}" name="hotel_name")
+					input(type="text" value= "#{hotel.hotel_name}" name="hotel_name" readonly)
 					div
 					label(for="hotel_address" class="form-label") Address:
 					input(type="text" value= "#{hotel.hotel_address}" name="hotel_address")
