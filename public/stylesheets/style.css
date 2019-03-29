@@ -82,3 +82,20 @@ td:nth-child(2) {
     left:1000px;
     bottom:30px;
   }
+  
+  .form{
+    position:relative;
+	margin: 0 auto; 
+	width:400px;
+	top:50px;
+}
+
+.form-label{
+	display: inline-block;
+    width:150px;
+    text-align: right;
+}
+.form-buttons{
+	position:relative;
+	left:80px;
+}

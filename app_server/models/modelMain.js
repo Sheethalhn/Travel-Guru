@@ -55,18 +55,18 @@ module.exports.post_adddest = function(req, res)
  */
 module.exports.post_deletedest = function(req, res) 
 {
-    var uname = req.params.hotelName;
+    var hotel_name = req.body.hotel_name;
     var db = req.db;
     var collection = db.get('destination');
 
-    collection.remove( { "hotel_name" : hotelName },
+    collection.remove( { "hotel_name" : hotel_name },
                        function (err, doc) 
                        {
                            if (err) {
                                res.send("Delete failed.");
                            }
                            else {
-                               res.send("Successfully deleted " + uname);
+                        	   res.render('index', { "title": 'admin dashboard.',"message":'Destination details deleted successfully' });
                            }
                        });
 };
