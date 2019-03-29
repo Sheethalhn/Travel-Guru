@@ -1,6 +1,7 @@
 extends layout
 
 block content
+	if(destlist.length)
 		each hotel in destlist
 			form(method="post" class="form")
 				fieldset
@@ -22,3 +23,6 @@ block content
 					div
 					button#btnedit(type="submit",formaction="/updatedest" class="form-buttons") Update
 					button#btnedit(type="submit",formaction="/deletedest" class="form-buttons") Delete
+	else
+		h1.
+			There is no data to display

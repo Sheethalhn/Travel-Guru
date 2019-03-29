@@ -112,8 +112,7 @@ module.exports.searchCity = function(req, res)
                          if (err) {
                              res.send("Find failed.");
                          }
-                         else {
-                        	 console.log(doc);
+                         else {		 
                         	 res.render('update_delete', { "destlist" : doc });
                          }
                      });
