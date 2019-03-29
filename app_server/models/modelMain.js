@@ -75,27 +75,19 @@ module.exports.post_deletedest = function(req, res)
 module.exports.post_loaddataset = function(req, res){
 
     var data = require('../../MOCK_DATA.json');
-    var client = require('mongodb').MongoClient;
-    var url = "mongodb://localhost:27017/";
-   client.connect(url, function(err, db) {
-        if (err) throw err;
-        var dbase = db.db("travelguru");
-      //  if (dbase.collection("destination")) {
-		    dbase.createCollection("destination", function(err, res) {
-		        if (err) throw err;
-		        console.log("Collection created!");
-		        dbase.collection("destination").insertMany(data, function (err, result) {
-		            if (err) throw err;
-		            
-		        });	
-		    });
-     //   }
-	  // 	 else {
-	  // 		console.log("here");
-	  // 		res.render('index', { "title": 'admin dashboard.',"message":'Records already uploaded' });
-	//	 }
-    });
-   res.render('index', { "title": 'admin dashboard.',"message":'1000 Records inserted successfully' });
+    var db = req.db;
+    var collection = db.get('destination');
+    collection.insert( data ,
+      function (err, docs) 
+      {
+          if (err) {
+        	  res.render('index', { "title": 'admin dashboard.',"message":'Records already uploaded' });
+          }
+          else {
+              // Forward to success page
+        	  res.render('index', { "title": 'admin dashboard.',"message":'1000 Records inserted successfully' });
+          }
+      });
 };
 
 
