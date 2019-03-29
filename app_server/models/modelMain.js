@@ -118,3 +118,10 @@ module.exports.searchCity = function(req, res)
                          }
                      });
 };
+
+module.exports.post_updatedest = function(req, res) 
+{
+    var db = req.db;
+    var collection = db.get('destination');
+
+};

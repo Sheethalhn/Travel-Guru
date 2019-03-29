@@ -21,6 +21,7 @@ router.get('/userlist', modelMain.get_destinations)
 router.get('/update', cntrMain.update)
 router.post('/update', modelMain.searchCity)
 router.post('/deletedest', modelMain.post_deletedest)
+router.post('/updatedest', modelMain.post_updatedest)
 
 
 
