@@ -12,28 +12,6 @@ module.exports.get_destinations = function(req, res)
                     });
 };
 
-/*
- Needs to be modified
- */
-module.exports.get_showdest = function(req, res) 
-{
-    var uname = req.params.username;
-    var db = req.db;
-    var collection = db.get('destination');
-    
-    collection.find( { username : uname }, 
-                     function(err, doc) 
-                     {
-                         if (err) {
-                             res.send("Find failed.");
-                         }
-                         else {
-                             res.render('showuser', 
-                                        { title: 'Show User: ' + uname,
-                                          mail: doc[0].email })
-                         }
-                     });
-};
 
 /*
  * POST add user page.
@@ -135,7 +113,8 @@ module.exports.searchCity = function(req, res)
                              res.send("Find failed.");
                          }
                          else {
-                        	 res.render('userlist', { "destlist" : doc });
+                        	 console.log(doc);
+                        	 res.render('update_delete', { "destlist" : doc });
                          }
                      });
 };

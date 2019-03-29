@@ -1,0 +1,17 @@
+extends layout
+
+block content
+		each hotel in destlist
+			form(method="post" action="/update")
+				label(for="city") City:
+				input(type="text" value= "#{hotel.city}" name="city")
+				label(for="hotel_name") Hotel Name:
+				input(type="text" value= "#{hotel.hotel_name}" name="hotel_name")
+				label(for="hotel_address") Address:
+				input(type="text" value= "#{hotel.hotel_address}" name="hotel_address")
+				label(for="phone") Phone:
+				input(type="text" value= "#{hotel.phone}" name="phone")
+				label(for="cost") Price:
+				input(type="text" value= "#{hotel.cost}" name="cost")
+				input(type="submit", value="Update")
+				input(type="submit", value="Delete")

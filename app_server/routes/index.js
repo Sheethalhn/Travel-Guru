@@ -18,12 +18,8 @@ router.get('/admin', cntrMain.admin)
 router.post('/admin', modelMain.post_adddest)
 router.post('/data', modelMain.post_loaddataset)
 router.get('/userlist', modelMain.get_destinations)
-
 router.get('/update', cntrMain.update)
 router.post('/update', modelMain.searchCity)
-
-
-router.get('/userlist/:username', modelMain.get_showdest)
 router.post('/deleteuser/:username', modelMain.post_deletedest)
 
 
