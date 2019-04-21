@@ -86,6 +86,13 @@ module.exports.update = function(req,res)
 
 };
 
+//Get dashboard page
+module.exports.dashboard = function(req,res)
+{
+	res.sendFile('dashboard.html', { root: path.join(__dirname, '../../public') });
+
+};
+
 module.exports.postRegister = function(req,res)
 {
 
@@ -250,7 +257,7 @@ module.exports.survey = function(req,res)
 /*
  * GET home page.
  */
-module.exports.options = function(req, res) 
+module.exports.options = function(req, res)
 {
     res.render('index', { "title": 'admin dashboard.' });
 };
@@ -258,7 +265,7 @@ module.exports.options = function(req, res)
 /*
  * GET new user page.
  */
-module.exports.get_newuser = function(req, res) 
+module.exports.get_newuser = function(req, res)
 {
     res.render('newuser', { "title": 'Add New User' });
 };
@@ -266,7 +273,7 @@ module.exports.get_newuser = function(req, res)
 /*
  * GET delete user page.
  */
-module.exports.get_deleteuser = function(req, res) 
+module.exports.get_deleteuser = function(req, res)
 {
     var uname = req.params.username;
     res.render('deleteuser', { "username" : uname} );

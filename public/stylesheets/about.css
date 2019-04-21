@@ -33,3 +33,11 @@ p::first-letter {
   font-size: 150%;
   color: blue;
 }
+
+.dashboard {
+  width: 2400px;
+  height: 900%;
+  align: center;
+  border: 20px;
+  border-color: blue;
+}
