@@ -1,6 +1,7 @@
 body, html {
   height: 100%;
   margin:0;
+  overflow-y: hidden;
 }
 .icon{
     width: 160px;
@@ -23,7 +24,7 @@ body, html {
     top: 50%;
 
   }
-  
+
   .header-icon1,
   .header-icon2 {
     height: 27px;
@@ -32,8 +33,8 @@ body, html {
     color:black;
     font-weight:bold;
   }
-  
-  
+
+
   .line {
     display: block;
     height: 20px;
@@ -43,33 +44,32 @@ body, html {
     margin-right: 23px;
     margin-top: 5px;
   }
-  
+
   .background-image{
     background-image: url('../images/landing.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    height: 100%; 
+    height: 100%;
     background-size: cover;
     opacity: 0.9;
   }
-  
+
   .search_place{
             position: absolute;
             top : 350px;
             left: 450px;
   }
-  
+
   input[name="search"]{
   		width:400px ;
   		height:40px ;
         font-size:large;
   }
-  
+
    .search_place input[type="submit"]{
   		width:100px;
   		height:40px;
   		font-size:large;
       font-weight:bold;
-  		
+
   }
-  
